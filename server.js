@@ -19,7 +19,9 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://aquamarine-semolina-dd6e68.netlify.app'
+    'https://jason-s-frontend.vercel.app',  // TODO: Replace with your actual Vercel URL
+    // Add multiple Vercel URLs if needed (preview deployments):
+    /\.vercel\.app$/  // This allows all *.vercel.app domains
   ],
   credentials: true
 }));
