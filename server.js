@@ -562,7 +562,7 @@ app.post("/api/n8n/paste-text", authenticateToken, async (req, res) => {
     }
 
     console.log("Sending text to n8n, length:", content.length);
-    console.log("Metadata received:", metadata);
+    console.log("Metadata received:", JSON.stringify(metadata, null, 2));
 
     // Build the payload with all data
     const payload = {
@@ -577,10 +577,9 @@ app.post("/api/n8n/paste-text", authenticateToken, async (req, res) => {
     if (metadata) {
       payload.metadata = {
         title: metadata.title || "",
-        description: metadata.description || "",
-        category: metadata.category || "",
+        speaker: metadata.speaker || "",
+        url: metadata.url || "",
         publishedDate: metadata.publishedDate || "",
-        tags: Array.isArray(metadata.tags) ? metadata.tags : [],
       };
     }
 
